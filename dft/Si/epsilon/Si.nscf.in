@@ -1,0 +1,38 @@
+&CONTROL
+    calculation   = 'nscf',    
+    prefix        = 'Si',
+    wf_collect    = .TRUE.,
+    etot_conv_thr =  1.0000000000d-06,
+    forc_conv_thr =  1.0000000000d-05,
+    pseudo_dir    = '../pseudo/',
+    outdir        = './work/',
+    verbosity     = 'high'
+/
+
+&SYSTEM
+    a           = 5.381529658,
+    ibrav       = 2,
+    nat         = 2,
+    ntyp        = 1,    
+    ecutwfc     = 80.0, 
+    nbnd        = 32,    
+    nosym       = .TRUE.,
+    noinv       = .TRUE.,
+/
+
+&ELECTRONS
+    diagonalization  = 'david',
+    diago_full_acc   = .TRUE.,
+    conv_thr         = 1.0000000000d-10,
+    mixing_beta      = 0.15
+/
+
+ATOMIC_SPECIES
+Si     28.0855   Si.pz-hgh.UPF
+
+ATOMIC_POSITIONS (crystal)
+Si      0.000000000  0.000000000  0.000000000
+Si      0.750000000  0.750000000  0.750000000
+
+K_POINTS (automatic)
+32 32 32 1 1 1
